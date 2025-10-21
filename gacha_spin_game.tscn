@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://b4xpdck0cfkn1"]
+
+[ext_resource type="Script" uid="uid://b0i5cvxajsjcr" path="res://gacha_spin_game.gd" id="1_to6gh"]
+[ext_resource type="Script" uid="uid://0vow6u2k5op0" path="res://server/WebSocketServer.gd" id="2_5urkc"]
+[ext_resource type="PackedScene" uid="uid://cuyfra0mp6isn" path="res://scenes/machine.tscn" id="3_hqlxo"]
+
+[node name="Gacha Spin Game" type="Node2D"]
+script = ExtResource("1_to6gh")
+
+[node name="WebSocketServer" type="Node" parent="."]
+script = ExtResource("2_5urkc")
+
+[node name="Middlewares" type="Node" parent="."]
+
+[node name="Machine" parent="." instance=ExtResource("3_hqlxo")]

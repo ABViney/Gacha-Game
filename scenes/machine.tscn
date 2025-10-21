@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://cuyfra0mp6isn"]
+
+[ext_resource type="Script" uid="uid://djne3m0kp07la" path="res://scenes/machine.gd" id="1_oq1it"]
+[ext_resource type="Texture2D" uid="uid://bwtwakbjkc0fj" path="res://images/gacha-machine.png" id="2_73k52"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_73k52"]
+radius = 13.0
+
+[node name="Machine" type="Node2D"]
+script = ExtResource("1_oq1it")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="GachaMachine" type="Sprite2D" parent="."]
+position = Vector2(-19, 1.0000005)
+scale = Vector2(0.6939547, 0.6939547)
+texture = ExtResource("2_73k52")
+
+[node name="Bowl" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Bowl"]
+polygon = PackedVector2Array(97, -244, 126, -221, 147, -193, 161, -162, 171, -127, 172, -92, 167, -56, 153, -22, 128, 14, 12, 31, -11, 31, -128, 13, -154, -23, -171, -69, -173, -106, -169, -141, -159, -172, -140, -205, -122, -226, -99, -245)
+
+[node name="RewardCapsule" type="RigidBody2D" parent="."]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RewardCapsule"]
+visible = false
+position = Vector2(-25, -141)
+shape = SubResource("CircleShape2D_73k52")
+debug_color = Color(0, 0.5764706, 0.81960785, 1)
