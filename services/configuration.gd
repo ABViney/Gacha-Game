@@ -95,5 +95,5 @@ func _create_default_config() -> AppConfig:
 	config.window_title = "Gacha Game"
 	config.window_width = 300
 	config.window_height = 300
-	config.path_to_music = "res://sounds/mario_wii_item_music.ogg"
+	config.path_to_music = "res://sounds/music/mario_wii_item_music.ogg"
 	return config
