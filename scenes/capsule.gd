@@ -22,11 +22,14 @@ var _color : Color = Color.BLACK
 		return _color
 	set(value):
 		_color = value
-		_update_capsule_color()
+		# If the capsule is already in the scene tree, we can change its texture
+		if (self.is_node_ready()):
+			_update_capsule_color()
 
 func _ready() -> void:
 	if not initial_sounds_loaded:
 		_load_sounds()
+	_update_capsule_color()
 
 #region Animation
 
@@ -125,6 +128,6 @@ func _update_capsule_color() -> void:
 		
 		assert(FileAccess.file_exists(output_file), "Failed to create variant or i dunno where it ended up teehee")
 		print("Capsule variant created")
-	
-	print(typeof($CapsuleBottomHalfSprite))
-	capsule_bottom_half.texture = ImageTexture.create_from_image(Image.load_from_file(output_file))
+		capsule_bottom_half.texture = ImageTexture.create_from_image(template)
+	else:
+		capsule_bottom_half.texture = ImageTexture.create_from_image(Image.load_from_file(output_file))
