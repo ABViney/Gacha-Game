@@ -14,4 +14,5 @@ func invoke(json_context : JSONContext) -> String
 func next(json_context : JSONContext) -> String:
 	if _next_middleware == null:
 		return JSON.stringify(json_context.response.data)
+	@warning_ignore("redundant_await")
 	return await _next_middleware.invoke(json_context)
