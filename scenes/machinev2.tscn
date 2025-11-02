@@ -1,0 +1,1483 @@
+[gd_scene load_steps=6 format=3 uid="uid://cx5raxileobw8"]
+
+[ext_resource type="Script" uid="uid://djne3m0kp07la" path="res://scenes/machine.gd" id="1_35q5s"]
+[ext_resource type="Texture2D" uid="uid://bwtwakbjkc0fj" path="res://images/gacha-machine.png" id="2_4wyow"]
+[ext_resource type="PackedScene" uid="uid://rjr8adgp70s4" path="res://scenes/capsule.tscn" id="3_n3023"]
+
+[sub_resource type="Animation" id="Animation_eo4jl"]
+length = 0.001
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_25hvn"]
+_data = {
+&"RESET": SubResource("Animation_eo4jl")
+}
+
+[node name="Machine" type="Node2D"]
+script = ExtResource("1_35q5s")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(25.107544, -127.16919)
+zoom = Vector2(0.74, 0.74)
+
+[node name="GachaMachine" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(-22.81378, 149.2574)
+scale = Vector2(1.4814961, 1.5364462)
+texture = ExtResource("2_4wyow")
+
+[node name="Spawner" type="Node2D" parent="."]
+position = Vector2(8.574341, -27.58487)
+
+[node name="Bowl" type="StaticBody2D" parent="."]
+position = Vector2(2.8531494, 216.83698)
+
+[node name="Closed" type="CollisionPolygon2D" parent="Bowl"]
+position = Vector2(189.06659, -88.4381)
+scale = Vector2(2.156843, 2.236842)
+build_mode = 1
+polygon = PackedVector2Array(16.04065, -232.96576, 46.015476, -206.46138, 67.01547, -178.46138, 81.01547, -147.46138, 91.01547, -112.46138, 90.03161, -78.49458, 83.922264, -39.876778, 68.988304, -7.14983, 47.286385, 21.768211, 3.746338, 29.774628, -85.736305, 34.245216, -92.69091, 34.245216, -169.19162, 28.880508, -212.35233, 21.768211, -230.36966, -9.113461, -250.98456, -54.46138, -252.98456, -91.46138, -248.98456, -126.46138, -238.98453, -157.46138, -219.98453, -190.46138, -203.50102, -212.0842, -179.85535, -232.20187, -172.4371, -249.63715, -157.13696, -262.15482, -140.90955, -269.30774, -118.19115, -275.1195, -101.96373, -278.69598, -82.027176, -279.5901, -58.381508, -278.24893, -34.735836, -273.77832, -16.653847, -267.5195, -0.42642975, -259.0254, 12.555511, -246.9548)
+
+[node name="Capsules" type="Node2D" parent="."]
+
+[node name="Capsule" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(79.16115, 169.54694)
+rotation = 1.8733234
+linear_velocity = Vector2(0.072514795, 0.059754208)
+angular_velocity = 0.011970143
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_3" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(-328.54172, -11.202217)
+rotation = 2.8006475
+scale = Vector2(0.99999994, 0.99999994)
+linear_velocity = Vector2(-1.7928967, 2.7484894)
+angular_velocity = 0.0027651652
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_4" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(-274.847, 115.32141)
+rotation = -1.6176002
+scale = Vector2(0.99999994, 0.99999994)
+linear_velocity = Vector2(-0.031737, 0.2607186)
+angular_velocity = 0.008536434
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_5" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(-161.20392, 161.6182)
+rotation = -2.6529214
+linear_velocity = Vector2(0.5175719, 0.12061635)
+angular_velocity = 0.017016327
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_6" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(364.1892, -68.45512)
+rotation = -2.8237
+linear_velocity = Vector2(-0.17852168, -0.5197146)
+angular_velocity = 0.014758636
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_7" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(302.40247, 126.83212)
+rotation = 2.784506
+linear_velocity = Vector2(0.050192468, -0.22466783)
+angular_velocity = -0.005678097
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_8" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(220.9781, 159.2999)
+rotation = -0.75933796
+linear_velocity = Vector2(0.27181217, 0.05807877)
+angular_velocity = 0.0058860066
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_9" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(30.722706, 171.57813)
+rotation = 1.2199478
+linear_velocity = Vector2(0.32566172, 0.01911679)
+angular_velocity = 0.003717621
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_10" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(-313.32697, 32.256073)
+rotation = 0.9176978
+linear_velocity = Vector2(-0.0149539225, 0.16646485)
+angular_velocity = 0.0077891108
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_11" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(-295.0263, 74.06871)
+rotation = -1.5687224
+linear_velocity = Vector2(0.0330972, 0.19892505)
+angular_velocity = -0.00506869
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_12" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(-252.42639, 155.5456)
+rotation = -1.5408474
+linear_velocity = Vector2(0.061306156, 0.1740198)
+angular_velocity = 0.0024425823
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_13" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(355.64645, 1.8084488)
+rotation = 0.6625375
+linear_velocity = Vector2(-0.19100532, -0.40963325)
+angular_velocity = 0.03586108
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_14" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(344.98398, 46.4368)
+rotation = 0.12438444
+linear_velocity = Vector2(0.24705863, -0.28391823)
+angular_velocity = 0.011556175
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_15" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(173.13927, 162.38058)
+rotation = 2.674714
+linear_velocity = Vector2(0.2844646, 0.16487221)
+angular_velocity = 0.0056700213
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_16" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(326.58975, 88.18498)
+rotation = -1.9459587
+linear_velocity = Vector2(0.031224146, -0.19916125)
+angular_velocity = -0.0010468271
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_17" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(-206.74367, 158.52426)
+rotation = -2.465931
+linear_velocity = Vector2(0.38208172, 0.029516071)
+angular_velocity = -0.013670776
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_18" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(194.51138, 122.23761)
+rotation = -0.7380914
+linear_velocity = Vector2(0.31209853, 0.1600151)
+angular_velocity = -0.0047460236
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_19" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(299.206, 49.64174)
+rotation = -1.9835542
+linear_velocity = Vector2(0.15378663, -0.42061287)
+angular_velocity = 0.002915994
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_20" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(267.52304, 156.35706)
+rotation = 1.2103976
+scale = Vector2(0.99999994, 0.99999994)
+linear_velocity = Vector2(0.05911714, -0.16281034)
+angular_velocity = 0.0033113342
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_21" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(241.34926, 118.43063)
+rotation = -2.8524957
+linear_velocity = Vector2(0.20259261, -0.10375525)
+angular_velocity = -0.0072054854
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_22" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(-267.46936, 35.26912)
+rotation = 1.835754
+linear_velocity = Vector2(-0.16393615, 1.2067792)
+angular_velocity = -0.024477243
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_23" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(-249.1161, 77.28807)
+rotation = -1.3139439
+linear_velocity = Vector2(0.2856463, 0.65192306)
+angular_velocity = -0.005421941
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_24" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(-181.23886, 120.55583)
+rotation = -1.668618
+linear_velocity = Vector2(0.38339394, 0.0790203)
+angular_velocity = 0.0068452456
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_25" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(125.58539, 166.0968)
+rotation = -1.6081108
+scale = Vector2(0.99999994, 0.99999994)
+linear_velocity = Vector2(0.16565445, 0.30541342)
+angular_velocity = 0.0021837861
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_26" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(358.26517, -147.73016)
+rotation = 1.7422873
+linear_velocity = Vector2(0.05014188, -0.32770064)
+angular_velocity = 0.010320216
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_27" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(338.91946, -106.45466)
+rotation = 0.29067498
+linear_velocity = Vector2(-0.25539586, -0.6022797)
+angular_velocity = 0.00041277616
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_28" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(331.48654, -36.758934)
+rotation = 0.30558443
+linear_velocity = Vector2(-0.44531873, -0.5602349)
+angular_velocity = -0.011506105
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_29" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(309.86966, 5.290428)
+rotation = -1.6962522
+scale = Vector2(0.99999994, 0.99999994)
+linear_velocity = Vector2(-0.22306311, -0.62582564)
+angular_velocity = -0.022065772
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_30" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(286.1721, -33.65403)
+rotation = 1.3569618
+linear_velocity = Vector2(-0.6674629, -0.8511302)
+angular_velocity = 0.027618192
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_31" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(-330.3368, -84.73642)
+rotation = 2.4347186
+scale = Vector2(0.99999994, 0.99999994)
+linear_velocity = Vector2(-1.1151073, 0.8086564)
+angular_velocity = 0.06658483
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_32" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(264.4987, 8.476166)
+rotation = -2.901558
+scale = Vector2(0.99999994, 0.99999994)
+linear_velocity = Vector2(-0.2808555, -0.6635012)
+angular_velocity = 0.023589814
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_33" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(-302.37964, -48.605213)
+rotation = 1.5262543
+linear_velocity = Vector2(-3.973985, 2.3514917)
+angular_velocity = 0.015173976
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_34" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(312.42624, -265.50293)
+rotation = -1.8184022
+linear_velocity = Vector2(0.06086965, 0.25683716)
+angular_velocity = -0.0010961631
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_35" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(-227.2438, 117.29637)
+rotation = 1.4811901
+linear_velocity = Vector2(0.21084405, 0.27087)
+angular_velocity = 0.0053237206
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_36" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(-282.69836, -7.633621)
+rotation = 2.8022625
+linear_velocity = Vector2(-1.8057473, 2.791116)
+angular_velocity = -0.00097532704
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_37" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(260.47882, -71.638275)
+rotation = 1.3247217
+linear_velocity = Vector2(-0.9415799, -1.525176)
+angular_velocity = 0.053389784
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_38" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(-277.4425, -256.9973)
+rotation = 2.4852216
+linear_velocity = Vector2(0.04281348, 0.67059827)
+angular_velocity = 0.05767882
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_39" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(-256.56955, -45.390137)
+rotation = -0.29738706
+linear_velocity = Vector2(-4.016952, 3.0467954)
+angular_velocity = 0.015064405
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_40" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(-244.32242, -89.237625)
+rotation = -2.218584
+linear_velocity = Vector2(-1.5391128, 5.125566)
+angular_velocity = 0.18108556
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_41" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(-221.69191, 38.689224)
+rotation = -2.4034255
+linear_velocity = Vector2(0.27523816, 0.110631876)
+angular_velocity = -0.009985556
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_42" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(306.09048, -74.815765)
+rotation = 1.3330258
+linear_velocity = Vector2(-0.43879133, -0.40792623)
+angular_velocity = 0.0012982087
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_43" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(-201.28516, 79.58249)
+rotation = -1.3330492
+linear_velocity = Vector2(0.48552218, 0.03908891)
+angular_velocity = -0.00027851015
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_44" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(-300.90735, -217.93549)
+rotation = -1.9640743
+scale = Vector2(0.99999994, 0.99999994)
+linear_velocity = Vector2(-0.31539857, 0.42182302)
+angular_velocity = -0.006281076
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_45" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(284.75195, -303.52698)
+rotation = 0.87426734
+linear_velocity = Vector2(0.22116947, 0.3827835)
+angular_velocity = -0.0167296
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_46" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(276.3842, 89.18288)
+rotation = -2.5316708
+linear_velocity = Vector2(0.09284872, -0.34388617)
+angular_velocity = 0.0033015949
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_47" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(241.0235, -30.649757)
+rotation = 1.3317993
+linear_velocity = Vector2(-0.77750087, -0.7163137)
+angular_velocity = -0.032302435
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_48" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(312.7423, -144.18674)
+rotation = -0.3503421
+linear_velocity = Vector2(0.023550866, -0.9715993)
+angular_velocity = 0.013098528
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_49" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(-324.9963, -129.89764)
+rotation = 2.9478426
+linear_velocity = Vector2(0.22961506, 0.541807)
+angular_velocity = -0.051385645
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_50" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(345.50812, -191.67552)
+rotation = -1.5522667
+linear_velocity = Vector2(-1.1109879, -0.06562172)
+angular_velocity = -0.064567775
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_51" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(-288.00107, -101.8537)
+rotation = 0.032212812
+linear_velocity = Vector2(-0.51002175, 1.2443368)
+angular_velocity = -0.055428207
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_52" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(146.49898, 125.32605)
+rotation = 2.3707628
+linear_velocity = Vector2(0.3452061, 0.33933088)
+angular_velocity = -0.004010547
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_53" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(246.88367, -329.45526)
+rotation = -2.9408605
+linear_velocity = Vector2(-0.35155487, 0.5905876)
+angular_velocity = 0.029929534
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_54" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(309.5855, -220.11752)
+rotation = 0.3790915
+scale = Vector2(0.99999994, 0.99999994)
+linear_velocity = Vector2(-1.3511903, -0.24451694)
+angular_velocity = 0.06535735
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_55" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(286.0327, -181.03598)
+rotation = -1.245918
+linear_velocity = Vector2(-1.1253103, -0.11781897)
+angular_velocity = -0.0719278
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_56" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(-237.98567, -3.8441467)
+rotation = 2.532002
+linear_velocity = Vector2(-2.23172, 1.2502867)
+angular_velocity = -0.06286813
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_57" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(-68.76062, 167.85394)
+rotation = 2.0230706
+linear_velocity = Vector2(0.38821697, -0.40524465)
+angular_velocity = 0.02144697
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_58" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(-315.1879, -174.52414)
+rotation = -1.7175581
+linear_velocity = Vector2(-0.57449377, 0.42187887)
+angular_velocity = 0.012474261
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_59" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(203.52074, -149.70226)
+rotation = 0.59469146
+linear_velocity = Vector2(-0.49362347, 0.529185)
+angular_velocity = 0.022722073
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_60" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(-165.72008, -39.220657)
+rotation = 2.5235124
+linear_velocity = Vector2(-6.9920583, 3.8247669)
+angular_velocity = -0.38787577
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_61" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(250.15381, 51.923737)
+rotation = 0.69807994
+linear_velocity = Vector2(-0.17221497, -0.60091424)
+angular_velocity = -0.03144463
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_62" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(267.04367, -261.1103)
+rotation = 1.5981702
+linear_velocity = Vector2(0.1827267, 0.34249985)
+angular_velocity = 0.008634142
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_63" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(-211.20241, -42.627296)
+rotation = 1.4965912
+linear_velocity = Vector2(-6.7260466, 7.8381133)
+angular_velocity = 0.17301825
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_64" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(-255.65369, -211.71921)
+rotation = 1.4940522
+scale = Vector2(0.99999994, 0.99999994)
+linear_velocity = Vector2(-0.560495, 1.5865331)
+angular_velocity = 0.049943205
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_65" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(-219.04878, -127.84203)
+rotation = -1.6902931
+linear_velocity = Vector2(-1.8292044, 5.0538797)
+angular_velocity = -0.09245222
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_66" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(249.08609, -153.88924)
+rotation = -1.5346276
+scale = Vector2(0.99999994, 0.99999994)
+linear_velocity = Vector2(-0.4933215, 0.61908114)
+angular_velocity = 0.023159897
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_67" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(215.57832, 81.4292)
+rotation = 1.3181235
+linear_velocity = Vector2(0.06859532, 0.035131544)
+angular_velocity = -0.0016135249
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_68" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(218.02684, -192.84686)
+rotation = 0.37686336
+linear_velocity = Vector2(-1.7135773, 0.22619897)
+angular_velocity = -0.06981728
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_69" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(257.41895, -216.576)
+rotation = 0.21967481
+linear_velocity = Vector2(-1.5574278, -0.10594456)
+angular_velocity = 0.062158354
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_70" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(229.67169, -287.20258)
+rotation = -2.380695
+linear_velocity = Vector2(-0.35566673, 0.8252304)
+angular_velocity = -0.04029079
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_71" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(-231.82962, -250.97868)
+rotation = 2.8317256
+linear_velocity = Vector2(-0.47283563, 1.6979164)
+angular_velocity = -0.038078185
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_72" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(-210.33015, -208.52173)
+rotation = 2.4986691
+linear_velocity = Vector2(-1.0349445, 3.9184823)
+angular_velocity = 0.043872543
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_73" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(-224.56102, -331.29044)
+rotation = -1.2340959
+linear_velocity = Vector2(-0.17182231, 0.034489036)
+angular_velocity = 0.028882664
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_74" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(214.78085, -69.07922)
+rotation = -0.764833
+linear_velocity = Vector2(-0.69126976, 0.46205238)
+angular_velocity = 0.021121815
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_75" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(-194.00076, -0.37387085)
+rotation = 2.4934022
+scale = Vector2(0.99999994, 0.99999994)
+linear_velocity = Vector2(-2.2170954, 8.490725)
+angular_velocity = -0.39298153
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_76" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(-278.80597, -146.66891)
+rotation = 1.0648599
+linear_velocity = Vector2(-1.3365283, 1.2206715)
+angular_velocity = 0.019406086
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_77" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(172.73988, -187.90411)
+rotation = 0.23671082
+linear_velocity = Vector2(-2.5744636, 0.2297222)
+angular_velocity = 0.06584873
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_78" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(217.44424, -239.38324)
+rotation = 0.95289695
+linear_velocity = Vector2(-1.7714274, -0.7956583)
+angular_velocity = -0.043207597
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_79" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(219.86111, 11.174843)
+rotation = -1.2112246
+linear_velocity = Vector2(-0.3693849, -0.07301409)
+angular_velocity = -0.010927959
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_80" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(-206.33913, -289.05103)
+rotation = -1.62455
+scale = Vector2(0.99999994, 0.99999994)
+linear_velocity = Vector2(-1.7854792, 0.8296118)
+angular_velocity = -0.03764985
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_81" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(-254.0449, -296.1847)
+rotation = 1.8115549
+linear_velocity = Vector2(0.39486983, 0.56739104)
+angular_velocity = -0.03998044
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_82" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(-175.9724, 41.292023)
+rotation = -1.6035843
+linear_velocity = Vector2(0.3914546, -0.011694964)
+angular_velocity = -0.004106355
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_83" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(-155.76271, 82.68326)
+rotation = 1.5426172
+linear_velocity = Vector2(0.4239825, 0.60635614)
+angular_velocity = 0.019371245
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_84" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(100.73012, 127.38983)
+rotation = -2.81973
+linear_velocity = Vector2(0.2736223, 0.56167567)
+angular_velocity = -0.004233705
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_85" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(-164.41791, -370.9665)
+rotation = 0.9364723
+linear_velocity = Vector2(-1.3234123, 1.3229935)
+angular_velocity = 0.076283775
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_86" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(157.86836, -144.58876)
+rotation = -0.55867285
+scale = Vector2(0.99999994, 0.99999994)
+linear_velocity = Vector2(-3.2064328, -0.64417505)
+angular_velocity = -0.014987301
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_87" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(195.69533, -27.702095)
+rotation = 0.27589518
+linear_velocity = Vector2(-0.8492452, 0.20866697)
+angular_velocity = -0.012556277
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_88" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(199.51132, -322.64664)
+rotation = -0.53938335
+linear_velocity = Vector2(-0.2816484, 0.9501698)
+angular_velocity = 0.019333899
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_89" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(188.95406, 44.599823)
+rotation = 1.3683083
+linear_velocity = Vector2(0.046612147, 0.20228347)
+angular_velocity = -0.0054720985
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_90" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(-239.1605, -169.16457)
+rotation = 2.2309783
+linear_velocity = Vector2(-1.6975131, 2.1207356)
+angular_velocity = 0.013870019
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_91" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(-178.83884, -327.87747)
+rotation = -0.9278325
+linear_velocity = Vector2(0.009599987, 1.5521345)
+angular_velocity = 0.06949713
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_92" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(53.236267, 130.89326)
+rotation = 2.7564235
+scale = Vector2(0.99999994, 0.99999994)
+linear_velocity = Vector2(0.41775227, -0.18829532)
+angular_velocity = 0.0066335932
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_93" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(41.52706, -364.9327)
+rotation = 1.0702183
+linear_velocity = Vector2(-0.36636895, 0.72469586)
+angular_velocity = 0.059840336
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_94" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(143.46251, 46.45604)
+rotation = 1.3477302
+linear_velocity = Vector2(-0.0048812698, 0.436675)
+angular_velocity = -0.009771048
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_95" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(-185.81828, -247.05113)
+rotation = 1.0820313
+linear_velocity = Vector2(-1.0836458, 3.211797)
+angular_velocity = -0.08413523
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_96" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(185.33571, -277.41797)
+rotation = -1.6464682
+linear_velocity = Vector2(-0.5386214, 0.84516585)
+angular_velocity = 0.033279702
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_97" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(-125.56372, -347.11053)
+rotation = 1.7034516
+scale = Vector2(0.99999994, 0.99999994)
+linear_velocity = Vector2(-0.90016603, -0.18870592)
+angular_velocity = -0.1434558
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_98" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(217.67361, -364.89496)
+rotation = -2.6719143
+linear_velocity = Vector2(-0.698466, 0.73971117)
+angular_velocity = -0.044089664
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_99" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(-164.45523, -205.46779)
+rotation = -1.5519124
+linear_velocity = Vector2(-1.3712531, 5.3525376)
+angular_velocity = -0.013273752
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_100" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(-115.57123, 165.14386)
+rotation = -1.529193
+linear_velocity = Vector2(0.6523544, 0.21059036)
+angular_velocity = 0.026073644
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_101" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(-160.80711, -285.5766)
+rotation = 0.343733
+linear_velocity = Vector2(-2.057325, 2.3564303)
+angular_velocity = 0.058633845
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_102" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(168.02081, 84.88956)
+rotation = -1.4685346
+linear_velocity = Vector2(0.2348907, 0.28682753)
+angular_velocity = 4.860256e-05
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_103" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(-193.67725, -165.7846)
+rotation = 2.537019
+linear_velocity = Vector2(-2.605674, 4.557492)
+angular_velocity = 0.030114949
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_104" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(28.730015, -320.93298)
+rotation = 0.15789357
+linear_velocity = Vector2(-1.2530986, 0.6194)
+angular_velocity = -0.043802746
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_105" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(122.05188, 86.81346)
+rotation = 2.3599207
+scale = Vector2(0.99999994, 0.99999994)
+linear_velocity = Vector2(0.34015784, 0.5457617)
+angular_velocity = -0.00047960563
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_106" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(-148.26399, -162.72313)
+rotation = 1.4907182
+linear_velocity = Vector2(-1.8930793, 5.8083544)
+angular_velocity = -0.024765957
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_107" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(172.10919, -233.65672)
+rotation = 0.1754535
+scale = Vector2(0.99999994, 0.99999994)
+linear_velocity = Vector2(-1.7041603, 0.40193936)
+angular_velocity = -0.032448977
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_108" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(279.40997, -113.44267)
+rotation = 2.67967
+linear_velocity = Vector2(-0.08600025, -1.1582304)
+angular_velocity = -0.0055248803
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_109" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(123.617935, -346.50995)
+rotation = -2.9995983
+scale = Vector2(0.99999994, 0.99999994)
+linear_velocity = Vector2(-0.6860515, 0.6360778)
+angular_velocity = -0.015450933
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_110" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(127.730774, -179.20007)
+rotation = 1.1443669
+linear_velocity = Vector2(-4.0380836, 0.7767948)
+angular_velocity = 0.073514044
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_111" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(-80.98408, -335.94696)
+rotation = 0.4369745
+linear_velocity = Vector2(-1.5280749, -1.9106197)
+angular_velocity = 0.08138415
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_112" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(-173.32036, -124.54892)
+rotation = 0.43932337
+linear_velocity = Vector2(-3.279008, 6.230722)
+angular_velocity = 0.016701179
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_113" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(168.49886, -356.53732)
+rotation = -0.59426826
+linear_velocity = Vector2(0.3010222, 0.46301335)
+angular_velocity = 0.014620613
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_114" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(233.92087, -110.54306)
+rotation = -2.5369124
+linear_velocity = Vector2(-1.0220546, 0.5246554)
+angular_velocity = -0.0016315584
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_115" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(154.76973, -312.9389)
+rotation = 2.5781496
+linear_velocity = Vector2(-0.51526034, 0.4261192)
+angular_velocity = 0.007841565
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_116" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(-117.860985, -301.55127)
+rotation = 1.5847225
+linear_velocity = Vector2(-1.9825641, 2.4979014)
+angular_velocity = -0.025945444
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_117" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(78.027596, -337.01672)
+rotation = -1.9057391
+linear_velocity = Vector2(-0.04684922, 0.63534313)
+angular_velocity = 0.020501174
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_118" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(-49.142952, -302.91498)
+rotation = -1.5853145
+linear_velocity = Vector2(-1.2324152, 0.31995383)
+angular_velocity = -0.08539574
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_119" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(-135.63887, 123.843094)
+rotation = 0.7510127
+linear_velocity = Vector2(0.60988, -0.018917572)
+angular_velocity = -0.013597397
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_120" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(-48.420998, -368.01166)
+rotation = 0.68342376
+scale = Vector2(0.99999994, 0.99999994)
+linear_velocity = Vector2(0.72125053, -0.43375242)
+angular_velocity = 0.036107372
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_121" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(165.20049, 5.7920074)
+rotation = 1.3560786
+linear_velocity = Vector2(-0.32701313, 0.48183474)
+angular_velocity = -0.009406638
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_122" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(64.87848, -293.0923)
+rotation = -2.7283328
+linear_velocity = Vector2(-0.50520116, 0.45724648)
+angular_velocity = 0.02765241
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_123" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(75.52633, 89.47186)
+rotation = -1.4410577
+linear_velocity = Vector2(0.24398206, 0.854789)
+angular_velocity = -0.0009219062
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_124" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(-125.968025, -256.2635)
+rotation = 2.1203897
+linear_velocity = Vector2(-1.8415575, 3.0119574)
+angular_velocity = -0.027872948
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_125" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(97.97947, 48.184082)
+rotation = 1.383363
+scale = Vector2(0.99999994, 0.99999994)
+linear_velocity = Vector2(0.46861297, 0.9118869)
+angular_velocity = -0.0016965014
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_126" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(-15.283094, 171.48575)
+rotation = -1.9031337
+linear_velocity = Vector2(0.32603145, -0.15116763)
+angular_velocity = 0.0037155189
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_127" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(188.34178, -106.30369)
+rotation = -1.8260466
+linear_velocity = Vector2(-0.980464, 0.38602442)
+angular_velocity = -0.00086985884
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_128" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(-58.644985, -179.45917)
+rotation = 0.52789783
+linear_velocity = Vector2(-2.0470328, 1.9275384)
+angular_velocity = 0.01454092
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_129" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(169.2821, -64.852585)
+rotation = -2.5209188
+linear_velocity = Vector2(-0.9452847, 0.09115861)
+angular_velocity = 0.0037673677
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_130" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(109.58923, -303.052)
+rotation = 0.6174922
+linear_velocity = Vector2(-0.5415546, 0.56974113)
+angular_velocity = -0.00423751
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_131" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(-82.2522, -270.95386)
+rotation = -2.4547257
+linear_velocity = Vector2(-1.8998928, 1.9340128)
+angular_velocity = -0.01636566
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_132" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(-38.48246, -258.37756)
+rotation = 0.9228632
+linear_velocity = Vector2(-2.2412045, 0.39355704)
+angular_velocity = -0.07553404
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_133" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(142.92444, -101.41111)
+rotation = -2.57532
+linear_velocity = Vector2(-1.2063622, 0.35399532)
+angular_velocity = -0.016708339
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_134" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(51.18043, -249.45476)
+rotation = 1.512934
+scale = Vector2(0.99999994, 0.99999994)
+linear_velocity = Vector2(-1.190016, 0.18436809)
+angular_velocity = -0.03150345
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_135" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(-102.86797, -168.69138)
+rotation = 2.6043255
+scale = Vector2(0.99999994, 0.99999994)
+linear_velocity = Vector2(-2.1315053, 3.6235356)
+angular_velocity = -0.07090355
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_136" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(-119.25375, -211.26984)
+rotation = 1.8663746
+linear_velocity = Vector2(-2.4051719, 4.1380763)
+angular_velocity = -0.0197427
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_137" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(-61.770153, 91.122925)
+rotation = -2.5622268
+linear_velocity = Vector2(0.80776364, -0.82814574)
+angular_velocity = 0.002015897
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_138" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(-16.25235, -334.55658)
+rotation = -2.660198
+linear_velocity = Vector2(-1.3141121, 1.0316657)
+angular_velocity = 0.043899775
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_139" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(140.30151, -269.30078)
+rotation = 2.6520736
+linear_velocity = Vector2(-0.5152133, 0.4206797)
+angular_velocity = -0.008135486
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_140" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(1.0298786, -178.8052)
+rotation = -1.552019
+linear_velocity = Vector2(-2.5003452, 2.587534)
+angular_velocity = 0.044754412
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_141" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(29.989655, 91.879135)
+rotation = -2.8050234
+linear_velocity = Vector2(-0.050130196, -0.287089)
+angular_velocity = -0.025145289
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_142" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(113.142075, -135.89063)
+rotation = 1.2378998
+linear_velocity = Vector2(-3.1490421, 0.7971204)
+angular_velocity = -0.057347827
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_143" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(-4.792343, -289.92145)
+rotation = -1.4599065
+linear_velocity = Vector2(-1.1681589, 0.94101757)
+angular_velocity = -0.001051171
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_144" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(95.74926, -259.44275)
+rotation = -3.0115979
+scale = Vector2(0.99999994, 0.99999994)
+linear_velocity = Vector2(-0.39278156, 1.4576483)
+angular_velocity = -0.03239732
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_145" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(119.994675, 7.546463)
+rotation = -1.8703971
+linear_velocity = Vector2(-0.11407387, 0.64103603)
+angular_velocity = -0.0035787616
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_146" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(134.1186, -35.780716)
+rotation = 2.1691523
+linear_velocity = Vector2(-0.35285494, 0.4329276)
+angular_velocity = -0.014212243
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_147" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(5.5297394, -244.99948)
+rotation = 0.51152366
+linear_velocity = Vector2(-1.1530493, 0.95608294)
+angular_velocity = -0.006296459
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_148" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(-39.47899, 131.81853)
+rotation = 2.8707964
+scale = Vector2(0.99999994, 0.99999994)
+linear_velocity = Vector2(0.8866612, -0.17860498)
+angular_velocity = 0.0016934127
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_149" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(103.61706, -78.362434)
+rotation = -1.9639591
+linear_velocity = Vector2(-1.0139555, 0.97810435)
+angular_velocity = -0.016169984
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_150" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(-198.84679, -86.5804)
+rotation = -0.28603807
+linear_velocity = Vector2(-1.6804986, 7.7744713)
+angular_velocity = -0.046829995
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_151" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(-110.02181, 86.211395)
+rotation = 1.4977418
+scale = Vector2(0.99999994, 0.99999994)
+linear_velocity = Vector2(0.5221706, -0.5702391)
+angular_velocity = 0.00962459
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_152" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(82.22012, -215.86101)
+rotation = -2.995714
+linear_velocity = Vector2(-1.9329002, 1.3679357)
+angular_velocity = 0.078737676
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_153" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(-148.90132, 2.9416962)
+rotation = -0.2573449
+linear_velocity = Vector2(0.14853314, 0.71413213)
+angular_velocity = 0.016369432
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_154" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(-28.622047, -213.84244)
+rotation = 1.5767691
+linear_velocity = Vector2(-1.8284132, 1.2049992)
+angular_velocity = 0.0142378025
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_155" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(-62.947754, -89.09246)
+rotation = -1.3793129
+linear_velocity = Vector2(-1.7637706, 2.3615263)
+angular_velocity = -0.03923178
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_156" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(126.927505, -225.20036)
+rotation = -1.4319099
+linear_velocity = Vector2(-1.6864, 0.32720786)
+angular_velocity = 0.04227829
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_157" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(-107.810524, -80.127)
+rotation = 1.5992204
+linear_velocity = Vector2(-1.3599584, 2.4473135)
+angular_velocity = 0.03695583
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_158" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(-153.25372, -83.29225)
+rotation = 1.6000836
+scale = Vector2(0.99999994, 0.99999994)
+linear_velocity = Vector2(-1.4789015, 4.971908)
+angular_velocity = -0.0753354
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_159" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(74.91196, 8.557915)
+rotation = 2.090051
+linear_velocity = Vector2(0.09975213, 1.2883135)
+angular_velocity = -0.008742187
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_160" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(-89.912186, 127.319336)
+rotation = -1.6856569
+scale = Vector2(0.99999994, 0.99999994)
+linear_velocity = Vector2(0.78461313, -0.5980141)
+angular_velocity = -0.020646693
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_161" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(-59.441463, 1.6582642)
+rotation = 0.53483933
+linear_velocity = Vector2(-0.39854258, 1.0803921)
+angular_velocity = -0.0997075
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_162" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(39.830105, -154.97897)
+rotation = -0.7730639
+linear_velocity = Vector2(-3.2729957, 2.9392252)
+angular_velocity = -0.063747235
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_163" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(88.34309, -34.9718)
+rotation = -0.32759112
+linear_velocity = Vector2(-0.39284453, 1.1683536)
+angular_velocity = -0.014764923
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_164" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(-73.74134, -133.77875)
+rotation = 0.15970457
+scale = Vector2(0.99999994, 0.99999994)
+linear_velocity = Vector2(-1.963074, 2.426188)
+angular_velocity = 0.021626078
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_165" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(-74.93877, -222.2703)
+rotation = 2.1787517
+linear_velocity = Vector2(-3.2189074, 2.371905)
+angular_velocity = -0.057970528
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_166" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(82.98279, -170.1748)
+rotation = 1.2318058
+linear_velocity = Vector2(-3.9674366, 1.3960774)
+angular_velocity = -0.013652957
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_167" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(37.7751, -205.71205)
+rotation = 0.9330023
+linear_velocity = Vector2(-1.9910147, 3.104261)
+angular_velocity = -0.012852244
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_168" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(25.23727, -111.74076)
+rotation = 1.4803038
+scale = Vector2(0.99999994, 0.99999994)
+linear_velocity = Vector2(-2.2787204, 3.1880896)
+angular_velocity = -0.01776183
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_169" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(-129.94615, 44.686874)
+rotation = -1.3164244
+linear_velocity = Vector2(0.23974942, 0.6707146)
+angular_velocity = -0.020556364
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_170" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(-84.452286, 47.907684)
+rotation = 2.5536854
+linear_velocity = Vector2(0.6459124, -0.101351835)
+angular_velocity = -0.010111195
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_171" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(-127.48484, -121.46068)
+rotation = 1.4228579
+linear_velocity = Vector2(-3.47759, 2.8493385)
+angular_velocity = -0.12088559
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_172" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(-119.807365, -35.91561)
+rotation = -0.6119089
+linear_velocity = Vector2(-1.2655778, 2.5729802)
+angular_velocity = -0.047249764
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_173" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(52.062336, 50.318924)
+rotation = 0.63791937
+linear_velocity = Vector2(0.5270413, 1.0373745)
+angular_velocity = -0.008961568
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_174" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(-29.098213, -144.53459)
+rotation = 1.0769343
+linear_velocity = Vector2(-1.9588088, 2.714768)
+angular_velocity = -0.0638562
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_175" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(6.7691746, 52.738983)
+rotation = -1.73928
+linear_velocity = Vector2(0.46751127, -0.6814399)
+angular_velocity = 0.06034604
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_176" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(7.597887, 131.57492)
+rotation = -0.6919621
+linear_velocity = Vector2(0.44681105, -0.011621155)
+angular_velocity = -0.0052167135
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_177" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(-103.218735, 6.5582047)
+rotation = -0.92539084
+linear_velocity = Vector2(0.15466236, 1.072244)
+angular_velocity = 0.017632801
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_178" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(-38.941402, 51.779633)
+rotation = 0.6197758
+linear_velocity = Vector2(0.54383594, -0.8901392)
+angular_velocity = -0.03688642
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_179" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(70.21313, -120.44119)
+rotation = 0.083554365
+scale = Vector2(0.99999994, 0.99999994)
+linear_velocity = Vector2(-2.4467025, 2.211005)
+angular_velocity = -0.024418473
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_180" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(57.892212, -76.533516)
+rotation = 2.4512434
+scale = Vector2(0.99999994, 0.99999994)
+linear_velocity = Vector2(-1.0082992, 2.5873654)
+angular_velocity = -0.0681483
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_181" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(-16.077427, 92.5172)
+rotation = -2.4280367
+linear_velocity = Vector2(1.0154232, -0.42061648)
+angular_velocity = 0.028641203
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_182" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(13.153366, -67.60982)
+rotation = -2.9801502
+linear_velocity = Vector2(-1.8356594, 2.6682532)
+angular_velocity = -0.060794607
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_185" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(-18.85249, -99.97909)
+rotation = -2.0681198
+linear_velocity = Vector2(-1.8995987, 2.7499013)
+angular_velocity = 0.0452134
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_186" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(42.84342, -32.998154)
+rotation = -1.9177021
+linear_velocity = Vector2(0.094065025, 1.4704906)
+angular_velocity = -0.0105468035
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_187" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(29.689793, 10.785385)
+rotation = 2.3938186
+linear_velocity = Vector2(0.52798, 1.0109957)
+angular_velocity = 0.011244987
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_188" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(-60.64523, -43.719738)
+rotation = -1.3060634
+scale = Vector2(0.99999994, 0.99999994)
+linear_velocity = Vector2(-1.2574401, 1.7368407)
+angular_velocity = 0.020755868
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_189" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(-15.714348, 12.52578)
+rotation = 2.7806723
+linear_velocity = Vector2(0.27683744, -0.6361735)
+angular_velocity = 0.058950022
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_191" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(-16.310942, -32.70108)
+rotation = 2.9001784
+linear_velocity = Vector2(-1.4825082, 2.969668)
+angular_velocity = 0.040608082
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_192" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(-93, -385)
+rotation = 5.2699757
+linear_velocity = Vector2(-1.4825082, 2.969668)
+angular_velocity = 0.040608082
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_193" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(-2.0000076, -384.00003)
+rotation = 6.2758656
+linear_velocity = Vector2(-1.4825082, 2.969668)
+angular_velocity = 0.040608082
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_194" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(93, -381)
+rotation = 5.706236
+linear_velocity = Vector2(-1.4825082, 2.969668)
+angular_velocity = 0.040608082
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_195" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(138, -394.00003)
+rotation = 1.7244575
+linear_velocity = Vector2(-1.4825082, 2.969668)
+angular_velocity = 0.040608082
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_196" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(47, -412)
+rotation = 0.5066681
+linear_velocity = Vector2(-1.4825082, 2.969668)
+angular_velocity = 0.040608082
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_197" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(-40, -416)
+rotation = 3.7942855
+linear_velocity = Vector2(-1.4825082, 2.969668)
+angular_velocity = 0.040608082
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_198" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(5, -433)
+rotation = 5.682886
+linear_velocity = Vector2(-1.4825082, 2.969668)
+angular_velocity = 0.040608082
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_199" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(94.00001, -427.00003)
+rotation = 0.94667566
+linear_velocity = Vector2(-1.4825082, 2.969668)
+angular_velocity = 0.040608082
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_200" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(47.999977, -461.00003)
+rotation = 0.94667566
+linear_velocity = Vector2(-1.4825082, 2.969668)
+angular_velocity = 0.040608082
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_201" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(-136.00003, -410.00003)
+rotation = 0.94667566
+linear_velocity = Vector2(-1.4825082, 2.969668)
+angular_velocity = 0.040608082
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_202" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(-90.999985, -432)
+rotation = 0.94667566
+linear_velocity = Vector2(-1.4825082, 2.969668)
+angular_velocity = 0.040608082
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_203" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(-41, -464)
+rotation = 0.94667566
+linear_velocity = Vector2(-1.4825082, 2.969668)
+angular_velocity = 0.040608082
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="_RigidBody2D_204" parent="Capsules" instance=ExtResource("3_n3023")]
+position = Vector2(140, -443.00006)
+rotation = 0.94667566
+linear_velocity = Vector2(-1.4825082, 2.969668)
+angular_velocity = 0.040608082
+color = Color(0.9411765, 0.972549, 1, 1)
+
+[node name="RewardCapsule" parent="." instance=ExtResource("3_n3023")]
+z_index = 1
+position = Vector2(16.49414, 1738556.6)
+linear_velocity = Vector2(0, 9799.521)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_25hvn")
+}
