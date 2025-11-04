@@ -4,13 +4,34 @@ class_name Capsule
 static var opening_sounds : Array[AudioStream]
 static var closing_sounds : Array[AudioStream]
 static var dropping_sounds : Array[AudioStream]
-
 static var initial_sounds_loaded : bool = false;
 
-@onready var capsule_bottom_half : Sprite2D = $CapsuleBottomHalfSprite
-@onready var reward_sprite : Sprite2D = $RewardSprite
-@onready var flavor_text : Label = $FlavorTextLabel
-@onready var animation_player : AnimationPlayer = $AnimationPlayer
+# get a texture for the file specified
+static var reward_texture_cache : Dictionary[String, Texture2D] = {}
+static func _get_reward_texture(file_path : String) -> Texture2D:
+	if reward_texture_cache.has(file_path):
+		return reward_texture_cache.get(file_path)
+	var texture2d := ImageTexture.create_from_image(Image.load_from_file(file_path))
+	if texture2d:
+		reward_texture_cache.set(file_path, texture2d)
+	return texture2d
+
+@onready var _animation_player : AnimationPlayer = $AnimationPlayer
+@onready var _capsule_bottom_half : Sprite2D = $CapsuleBottomHalfSprite
+
+# radius of the capsule is ~30. This resizes the sprite to fit neatly inside
+const TARGET_REWARD_DIMENSIONS := Vector2i(28,28)
+@onready var _reward_sprite : Sprite2D = $RewardSprite
+var _reward_image_path : String = "res://images/missing_texture.png"
+@export var reward_image_path : String:
+	get:
+		return _reward_image_path
+	set(value):
+		_reward_image_path = value
+		if (self.is_node_ready()):
+			_update_reward_image()
+		
+@onready var _flavor_text : Label = $FlavorTextLabel
 
 @onready var audio_stream_player : AudioStreamPlayer = $AudioStreamPlayer
 
@@ -26,16 +47,20 @@ var _color : Color = Color.BLACK
 		if (self.is_node_ready()):
 			_update_capsule_color()
 
+static var initial_size_printed = false
+static var final_size_printed = false
+
 func _ready() -> void:
 	if not initial_sounds_loaded:
 		_load_sounds()
+	_update_reward_image()
 	_update_capsule_color()
 
 #region Animation
 
 func play_open_animation() -> void:
-	animation_player.play("open capsule")
-	await animation_player.animation_finished
+	_animation_player.play("open capsule")
+	await _animation_player.animation_finished
 
 #endregion Animation
 
@@ -82,6 +107,7 @@ func _load_sounds() -> void:
 	initial_sounds_loaded = true
 #endregion Playback
 
+# update the color of the capsule_bottom_half sprite
 func _update_capsule_color() -> void:
 	var input_file : String
 	var output_file : String
@@ -128,6 +154,16 @@ func _update_capsule_color() -> void:
 		
 		assert(FileAccess.file_exists(output_file), "Failed to create variant or i dunno where it ended up teehee")
 		print("Capsule variant created")
-		capsule_bottom_half.texture = ImageTexture.create_from_image(template)
+		_capsule_bottom_half.texture = ImageTexture.create_from_image(template)
 	else:
-		capsule_bottom_half.texture = ImageTexture.create_from_image(Image.load_from_file(output_file))
+		_capsule_bottom_half.texture = ImageTexture.create_from_image(Image.load_from_file(output_file))
+
+
+func _update_reward_image() -> void:
+	var texture2d : Texture2D = _get_reward_texture(reward_image_path)
+	assert(texture2d != null, "%s could not be loaded as a texture" % reward_image_path)
+	_reward_sprite.texture = texture2d
+	
+	var texture_size = texture2d.get_size()
+	var scale_factor = min(TARGET_REWARD_DIMENSIONS.x / texture_size.x, TARGET_REWARD_DIMENSIONS.y / texture_size.y)
+	_reward_sprite.scale = Vector2(scale_factor, scale_factor)
